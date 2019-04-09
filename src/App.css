@@ -1,19 +1,74 @@
+ul {
+  list-style-type: none;
+}
+body {
+  font-family: Verdana, sans-serif;
+}
+
+/* component */
 .App {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-basis: 10px; */
   margin: 10px;
 }
 
-.Table {
-  width: 50px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid black;
+.Calendar {
+  width: 500px;
 }
-.day {
-  box-shadow: 5px 5px 5px #fff;
+
+/* class */
+.month {
+  display: flex;
+  padding: 70px 0px;
+  width: 100%;
+  background: #1abc9c;
+  justify-content: center;
 }
-.Table:hover {
-  width: 55px;
-  box-shadow: 5px 5px 5px #333;
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.weeks {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
+  border: #aaa solid 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.weeks li {
+  width: 15%;
+  color: #222;
+}
+
+.days {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  border: #aaa solid 1px;
+  text-align: center;
+}
+
+.days li {
+  border: #aaa solid 1px;
+  margin: 0;
+  padding: 0;
+  width: 13.886%;
+  background-color: #ddd;
 }
