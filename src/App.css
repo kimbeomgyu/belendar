@@ -72,3 +72,10 @@ body {
   width: 13.886%;
   background-color: #ddd;
 }
+
+.prev {
+  float: left;
+}
+.next {
+  float: right;
+}

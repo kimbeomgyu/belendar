@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import './App.css';
 
 const Calendar = () => {
@@ -23,7 +24,7 @@ const Calendar = () => {
     day: new Date().getDate()
   };
 
-  const dayUpdate = (year, month) => {
+  const dayUpdate = (year: number, month: number) => {
     const lastDay = new Date(year, month, 0).getDate();
     return new Array(35).fill(1).map((e, i) => (lastDay >= e + i ? e + i : ''));
   };
@@ -31,10 +32,10 @@ const Calendar = () => {
   const title = (
     <div className="month">
       <ul>
-        <li className="prev" />
-        <li className="next" />
+        <li className="prev" children="<" />
+        <li className="next" children=">" />
         <li>
-          {month[date.month - 1]}
+          <span>{month[0][date.month - 1]}</span>
           <br />
           <span>{date.year}</span>
         </li>
