@@ -73,13 +73,12 @@ const Calendar = () => {
       {title}
       <button
         className="now"
+        children="현재"
         onClick={() => {
           setNowMonth(date.month - 1);
           setNowYear(date.year);
         }}
-      >
-        현재
-      </button>
+      />
       <ul className="weeks">
         {day.map(el => (
           <li key={el} children={el} />
