@@ -11,22 +11,25 @@ body {
   flex-direction: column; */
   /* flex-basis: 10px; */
   margin: 10px;
+  width: 500px;
 }
 
 .Calendar {
+  display: flex;
+  flex-direction: column;
   width: 500px;
 }
 
 /* class */
 .month {
-  display: flex;
   padding: 70px 0px;
   width: 100%;
   background: #1abc9c;
-  justify-content: center;
 }
 
 .month ul {
+  display: flex;
+  flex: 1;
   margin: 0;
   padding: 0;
 }
@@ -44,7 +47,6 @@ body {
   background-color: #ddd;
   border: #aaa solid 1px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   text-align: center;
 }
@@ -58,7 +60,6 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
   border: #aaa solid 1px;
@@ -74,8 +75,17 @@ body {
 }
 
 .prev {
-  float: left;
+  flex: 3;
+  padding-top: 0.7rem;
+  padding-left: 0.7rem;
 }
 .next {
-  float: right;
+  flex: 3;
+  text-align: right;
+  padding-top: 0.7rem;
+  padding-right: 0.7rem;
+}
+.YM {
+  flex: 4;
+  text-align: center;
 }

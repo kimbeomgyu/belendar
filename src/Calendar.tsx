@@ -33,12 +33,12 @@ const Calendar = () => {
     <div className="month">
       <ul>
         <li className="prev" children="<" />
-        <li className="next" children=">" />
-        <li>
+        <li className="YM">
           <span>{month[0][date.month - 1]}</span>
           <br />
           <span>{date.year}</span>
         </li>
+        <li className="next" children=">" />
       </ul>
     </div>
   );
