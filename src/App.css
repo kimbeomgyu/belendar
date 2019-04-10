@@ -28,8 +28,11 @@ body {
   background: #1abc9c;
 }
 .now {
+  font-size: 1rem;
+  color: #fff;
   border: 0;
-  background-color: #2dd1b0;
+  border-top: solid 1px #2cd8b6;
+  background-color: #1abc9c;
   padding: 10px 0px;
 }
 
