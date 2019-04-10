@@ -23,8 +23,10 @@ const Calendar = () => {
     month: new Date().getMonth(),
     day: new Date().getDate()
   };
+
   const [nowMonth, setNowMonth] = useState(date.month - 1);
-  const onclickPrevMonth = () => {};
+  const [nowYear, setNowYear] = useState(date.year);
+
   const dayUpdate = (year: number, month: number) => {
     const lastDay = new Date(year, month, 0).getDate();
     return new Array(35).fill(1).map((e, i) => (lastDay >= e + i ? e + i : ''));
@@ -39,13 +41,16 @@ const Calendar = () => {
           onClick={
             0 < nowMonth
               ? () => setNowMonth(nowMonth - 1)
-              : () => setNowMonth(11)
+              : () => {
+                  setNowMonth(11);
+                  setNowYear(nowYear - 1);
+                }
           }
         />
         <li className="YM">
           <span>{month[nowMonth]}</span>
           <br />
-          <span>{date.year}</span>
+          <span>{nowYear}</span>
         </li>
         <li
           className="next"
@@ -53,7 +58,10 @@ const Calendar = () => {
           onClick={
             nowMonth < 11
               ? () => setNowMonth(nowMonth + 1)
-              : () => setNowMonth(0)
+              : () => {
+                  setNowMonth(0);
+                  setNowYear(nowYear + 1);
+                }
           }
         />
       </ul>
@@ -63,6 +71,15 @@ const Calendar = () => {
   return (
     <div className="Calendar">
       {title}
+      <button
+        className="now"
+        onClick={() => {
+          setNowMonth(date.month - 1);
+          setNowYear(date.year);
+        }}
+      >
+        현재
+      </button>
       <ul className="weeks">
         {day.map(el => (
           <li key={el} children={el} />

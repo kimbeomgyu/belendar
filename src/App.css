@@ -21,9 +21,16 @@ body {
 
 /* class */
 .month {
-  padding: 70px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0px;
   width: 100%;
   background: #1abc9c;
+}
+.now {
+  border: 0;
+  background-color: #2dd1b0;
+  padding: 10px 0px;
 }
 
 .month ul {
