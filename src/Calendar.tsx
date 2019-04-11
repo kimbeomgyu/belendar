@@ -26,13 +26,15 @@ const Calendar = () => {
   ];
 
   // useState
-  const [nowMonth, setNowMonth] = useState(date.month - 1);
+  const [nowMonth, setNowMonth] = useState(date.month);
   const [nowYear, setNowYear] = useState(date.year);
 
   // 함수들
   function dayUpdate(year: number, month: number) {
-    const lastDay = new Date(year, month, 0).getDate();
-    return new Array(35).fill(1).map((e, i) => (lastDay >= e + i ? e + i : ''));
+    const lastDay = new Date(year, month + 1, 0).getDate();
+    return new Array(35)
+      .fill(1)
+      .map((e, i) => (lastDay >= e + i ? e + i : 'x'));
   }
   function prevMonthUpdate() {
     if (0 < nowMonth) {
@@ -51,7 +53,7 @@ const Calendar = () => {
     }
   }
   function now() {
-    setNowMonth(date.month - 1);
+    setNowMonth(date.month);
     setNowYear(date.year);
   }
 
@@ -85,7 +87,7 @@ const Calendar = () => {
   const days = (
     <div>
       <ul className="days">
-        {dayUpdate(date.year, date.month).map((el, i) => (
+        {dayUpdate(nowYear, nowMonth).map((el, i) => (
           <li key={i + 1 + 'day'}>
             <div children={el} />
           </li>
