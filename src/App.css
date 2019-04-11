@@ -31,7 +31,7 @@ body {
   font-size: 1rem;
   color: #fff;
   border: 0;
-  border-top: solid 1px #2cd8b6;
+  border-bottom: solid 1px #2cd8b6;
   background-color: #1abc9c;
   padding: 10px 0px;
 }
