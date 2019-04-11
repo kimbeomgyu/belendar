@@ -4,7 +4,7 @@ import './App.css';
 
 const Calendar = () => {
   // 지정 변수들
-  const day = ['월', '화', '수', '목', '금', '토', '일'];
+  const day = ['일', '월', '화', '수', '목', '금', '토'];
   const date = {
     year: new Date().getFullYear(),
     month: new Date().getMonth(),
@@ -28,13 +28,21 @@ const Calendar = () => {
   // useState
   const [nowMonth, setNowMonth] = useState(date.month);
   const [nowYear, setNowYear] = useState(date.year);
+  const [nowDay, setNowDay] = useState(date.day);
 
   // 함수들
   function dayUpdate(year: number, month: number) {
-    const lastDay = new Date(year, month + 1, 0).getDate();
-    return new Array(35)
-      .fill(1)
-      .map((e, i) => (lastDay >= e + i ? e + i : 'x'));
+    const week = new Date(`${year}-${month}-1`).getDay();
+    const lastDay = new Date(year, month, 0).getDate();
+    return new Array(42).fill(1).map((e, i) => {
+      if (week > i) {
+        return 'x';
+      } else if (lastDay >= e + i - week) {
+        return e + i - week;
+      } else {
+        return 'x';
+      }
+    });
   }
   function prevMonthUpdate() {
     if (0 < nowMonth) {
@@ -87,7 +95,7 @@ const Calendar = () => {
   const days = (
     <div>
       <ul className="days">
-        {dayUpdate(nowYear, nowMonth).map((el, i) => (
+        {dayUpdate(nowYear, nowMonth + 1).map((el, i) => (
           <li key={i + 1 + 'day'}>
             <div children={el} />
           </li>
