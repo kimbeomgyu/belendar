@@ -6,7 +6,10 @@ body {
   padding: 0;
   font-family: Verdana, sans-serif;
 }
-
+/* 주황색 #f26d5b */
+/* 노란색 #f6ea8c */
+/* 빨간색 #c03546 */
+/* 보라색 #492540 */
 /* component */
 .App {
   margin: 10px;
@@ -14,55 +17,68 @@ body {
 }
 
 .Calendar {
+  width: 500px;
   display: flex;
   flex-direction: column;
-  width: 500px;
 }
 
 /* class */
 .month {
+  width: 100%;
+  padding: 50px 0px;
+  margin-bottom: 5px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 50px 0px;
-  width: 100%;
-  background: #1abc9c;
+  background-color: #f26d5b;
 }
 .now {
-  font-size: 1rem;
-  color: #fff;
   border: 0;
-  border-bottom: solid 1px #2cd8b6;
-  background-color: #1abc9c;
+  font-size: 1rem;
   padding: 10px 0px;
+  border-radius: 10px 0px;
+  border-bottom: solid 1px #fff;
+  color: #fff;
+  background-color: #f26d5b;
+}
+.now:hover {
+  cursor: pointer;
+  color: #3f3f3f;
+  background-color: #f6ea8c;
 }
 
 .month ul {
-  display: flex;
-  flex: 1;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex: 1;
 }
 
 .month ul li {
-  color: white;
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .weeks {
-  margin: 0;
-  padding: 10px 0;
-  background-color: #ddd;
-  border: #aaa solid 1px;
-  display: flex;
-  justify-content: center;
   text-align: center;
+  justify-content: center;
+  margin: 5px 0;
+  padding: 10px 0;
+  display: flex;
+  border: #f26d5b solid 2px;
+  background-color: #fff;
 }
 
 .weeks li {
   width: 15%;
-  color: #222;
+  color: #f26d5b;
+  border-right: solid #f26d5b 1px;
+}
+
+.weeks li:last-child {
+  border-right: 0;
 }
 
 .days {
@@ -70,17 +86,23 @@ body {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
-  border: #aaa solid 1px;
   text-align: center;
+  justify-content: left;
+  border: #f26d5b solid 1px;
 }
 
 .days li {
-  border: #aaa solid 1px;
-  margin: 0;
-  padding: 0;
   width: 13.886%;
-  background-color: #ddd;
+  margin: 0;
+  padding: 10px 0;
+  border: #f26d5b solid 1px;
+  color: #f26d5b;
+  background-color: #fff;
+}
+.days li:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #f26d5b;
 }
 
 .prev,
@@ -94,6 +116,7 @@ body {
 .prev:hover,
 .next:hover {
   cursor: pointer;
+  color: #fff;
 }
 
 .YM {

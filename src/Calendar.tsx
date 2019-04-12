@@ -106,8 +106,8 @@ const Calendar = () => {
 
   return (
     <div className="Calendar">
-      <button className="now" onClick={now} children="지금 이 순간" />
       {year}
+      <button className="now" onClick={now} children="지금 이 순간" />
       {weeks}
       {days}
     </div>
