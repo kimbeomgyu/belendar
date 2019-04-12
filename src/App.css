@@ -16,27 +16,28 @@ body {
   padding: 10px;
 }
 
+/* Calendar */
 .Calendar {
   width: 500px;
   display: flex;
   flex-direction: column;
 }
 
-/* class */
 .month {
   width: 100%;
   padding: 50px 0px;
   margin-bottom: 5px;
-  border-radius: 8px;
+  border-radius: 10px 10px 0px 0px;
   display: flex;
   flex-direction: column;
   background-color: #f26d5b;
 }
+
 .now {
   border: 0;
   font-size: 1rem;
   padding: 10px 0px;
-  border-radius: 10px 0px;
+  border-radius: 0px 0px 10px 10px;
   border-bottom: solid 1px #fff;
   color: #fff;
   background-color: #f26d5b;
@@ -123,4 +124,31 @@ body {
 .YM {
   flex: 10;
   text-align: center;
+}
+
+/* TodoList */
+.todo {
+  width: 500px;
+  margin: 0;
+  padding: 0;
+}
+.todo ul {
+  margin: 0;
+  padding: 0;
+}
+.todo ul li {
+  margin: 0;
+  padding: 10px;
+  color: #f26d5b;
+  border-left: 2px solid #f26d5b;
+  border-right: 2px solid #f26d5b;
+  border-bottom: 2px solid #f26d5b;
+}
+.todo input {
+  margin: 10px 0px;
+  padding: 5px 200px 5px 5px;
+}
+.todo button {
+  margin: 10px;
+  padding: 5px 10px;
 }
