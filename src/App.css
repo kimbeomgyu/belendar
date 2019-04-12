@@ -93,6 +93,7 @@ body {
 
 .days li {
   width: 13.886%;
+  height: 1rem;
   margin: 0;
   padding: 10px 0;
   border: #f26d5b solid 1px;

@@ -36,11 +36,11 @@ const Calendar = () => {
     const lastDay = new Date(year, month, 0).getDate();
     return new Array(42).fill(1).map((e, i) => {
       if (week > i) {
-        return 'x';
+        return '  ';
       } else if (lastDay >= e + i - week) {
         return e + i - week;
       } else {
-        return 'x';
+        return '  ';
       }
     });
   }
