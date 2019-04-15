@@ -31,7 +31,7 @@ const Calendar = () => {
   const [nowDay, setNowDay] = useState(date.day);
 
   // 함수들
-  function dayUpdate(year: number, month: number) {
+  const dayUpdate = (year: number, month: number) => {
     const week = new Date(`${year}-${month}-1`).getDay();
     const lastDay = new Date(year, month, 0).getDate();
     return new Array(42).fill(1).map((e, i) => {
@@ -43,27 +43,27 @@ const Calendar = () => {
         return '  ';
       }
     });
-  }
-  function prevMonthUpdate() {
+  };
+  const prevMonthUpdate = () => {
     if (0 < nowMonth) {
       setNowMonth(nowMonth - 1);
     } else {
       setNowMonth(11);
       setNowYear(nowYear - 1);
     }
-  }
-  function nextMonthUpdate() {
+  };
+  const nextMonthUpdate = () => {
     if (nowMonth < 11) {
       setNowMonth(nowMonth + 1);
     } else {
       setNowMonth(0);
       setNowYear(nowYear + 1);
     }
-  }
-  function now() {
+  };
+  const now = () => {
     setNowMonth(date.month);
     setNowYear(date.year);
-  }
+  };
 
   // 년,월 표시하는 부분
   const year = (

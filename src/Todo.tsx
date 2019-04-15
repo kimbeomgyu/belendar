@@ -10,11 +10,11 @@ const Todo = () => {
   ]);
   const [text, setText] = useState('');
 
-  function pushText() {
+  const pushText = () => {
     const set = todoList.slice();
     set.push(text);
     setTodoList(set);
-  }
+  };
 
   return (
     <div className="todo">
