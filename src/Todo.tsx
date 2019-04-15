@@ -6,12 +6,14 @@ const Todo = () => {
   const [todoList, setTodoList] = useState(new Array());
   const [text, setText] = useState('');
 
-  const pushText = () => {
+  const pushText = (e: any) => {
     const set = todoList.slice();
-    set.push(text);
+    if (!set.includes(text)) {
+      set.push(text);
+    }
     setTodoList(set);
+    e.parentElement.children[1].value = '';
   };
-
   const deleteText = (e: string) => {
     const set = todoList.filter(el => {
       return e !== el ? el : null;
@@ -29,7 +31,7 @@ const Todo = () => {
         ))}
       </ul>
       <input type="text" onChange={e => setText(e.target.value)} />
-      <button onClick={pushText} children="넣기" />
+      <button onClick={e => pushText(e.target)} children="넣기" />
       <span style={{ color: '#f26d5b' }} children="즁복입니다" />
     </div>
   );
